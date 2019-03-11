@@ -1,0 +1,19 @@
+{
+  "name": "storbox-core",
+  "version": "1.0.0",
+  "description": "Core of the storBox application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storbox-io/core.git"
+  },
+  "author": "Alexander Mandera",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/storbox-io/core/issues"
+  },
+  "homepage": "https://github.com/storbox-io/core#readme"
+}
