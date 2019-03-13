@@ -68,4 +68,4 @@ function getDateTime() {
     return hour + ":" + min + ":" + sec;
 }
 
-module.exports = new Log();
+module.exports = Log;

@@ -1,8 +1,4 @@
-/**
- * Core class
- */
-class Core {
+const Core = require('Core.class');
 
-}
-
-module.exports = new Core();
+global.__basedir = __dirname;
+module.exports = Core;
