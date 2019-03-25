@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/storbox-io/core/issues"
   },
-  "homepage": "https://github.com/storbox-io/core#readme"
+  "homepage": "https://github.com/storbox-io/core#readme",
+  "dependencies": {
+    "toml": "^3.0.0"
+  }
 }
