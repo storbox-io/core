@@ -4,7 +4,7 @@
 class Log {
 
     constructor() {
-        this.debugMode = false;
+        this.debugMode = true;
     }
 
     /**
@@ -68,4 +68,4 @@ function getDateTime() {
     return hour + ":" + min + ":" + sec;
 }
 
-module.exports = Log;
+module.exports = new Log();
