@@ -60,9 +60,12 @@ class ModuleLoader {
                 let module = await this.loadModule(`${dirPath}/${item.name}/index.js`);
                 if(module !== null) {
                     modules.push(module);
+                    i++;
                 }
             }
         }
+
+        log.debug(`Loaded a total of ${i} modules`);
 
         return modules;
     }
