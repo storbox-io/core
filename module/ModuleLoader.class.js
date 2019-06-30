@@ -65,7 +65,7 @@ class ModuleLoader {
             }
         }
 
-        log.debug(`Loaded a total of ${i} modules`);
+        Log.debug(`Loaded a total of ${i} modules`);
 
         return modules;
     }

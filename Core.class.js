@@ -33,10 +33,10 @@ class Core {
         this._modules["file-protocol"] = fileProtocolModules;
 
         for(let module of webModules) {
-            module.run(`${__dirname}/../config`);
+            module.run(`${__dirname}/../config`).then(() => Log.debug(`Started web module ${module.getName()}`));
         }
         for(let module of fileProtocolModules) {
-            module.run(`${__dirname}/../config`);
+            module.run(`${__dirname}/../config`).then(() => Log.debug(`Started file protocol module ${module.getName()}`));
         }
     }
 

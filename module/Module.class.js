@@ -23,7 +23,7 @@ class Module {
      * Start the module with the module path
      * @param configPath
      */
-    run(configPath) {
+    async run(configPath) {
 
     }
 
