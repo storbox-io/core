@@ -1,11 +1,20 @@
+const glob = require('glob');
+const path = require('path');
 const Core = require('./Core.class');
-const Module = require('./module/Module.class');
-const ModuleLoader = require('./module/ModuleLoader.class');
-const Log = require('./util/Log.class');
-const FileProtocolModule = require('./module/FileProtocolModule.class');
-const WebModule = require('./module/WebModule.class');
 
 global.__basedir = __dirname;
+
 module.exports = {
-    Core, Module, ModuleLoader, Log, FileProtocolModule, WebModule
+    Core
 };
+
+// Add all classes in core to exports
+let names = glob.sync(__dirname + "/!(node_modules)/**/*.class.js", {absolute: false});
+names = names.map(n => path.relative(__dirname, n).replace(/\\/g, "/"));
+for (let name of names) {
+    let fileName = name.split("/");
+    fileName = fileName[fileName.length - 1].replace(".class.js", "");
+
+    let LoadedClass = require(`./${name}`);
+    module.exports[fileName] = LoadedClass;
+}

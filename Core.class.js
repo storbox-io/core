@@ -1,6 +1,7 @@
 const Log = require('./util/Log.class');
 const ModuleLoader = require('./module/ModuleLoader.class');
 
+const Database = require('./db/Database.class');
 const FileProtocolModule = require('./module/FileProtocolModule.class');
 const WebModule = require('./module/WebModule.class');
 
@@ -20,6 +21,11 @@ class Core {
     async run(configPath) {
         Log.info("Starting storBox (version 0.1)");
 
+        Log.info("Connect to database ...");
+        this._database = new Database("127.0.0.1", "storbox", async () => {
+            Log.info("Connected to database!");
+        });
+
         let webModuleLoader = new ModuleLoader(WebModule);
         let fileProtocolModuleLoader = new ModuleLoader(FileProtocolModule);
 
@@ -38,6 +44,10 @@ class Core {
         for(let module of fileProtocolModules) {
             module.run(`${__dirname}/../config`).then(() => Log.debug(`Started file protocol module ${module.getName()}`));
         }
+    }
+
+    getDatabase() {
+        return this._database;
     }
 
 }

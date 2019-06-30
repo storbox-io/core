@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/storbox-io/core#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "glob": "^7.1.4",
+    "mongoose": "^5.6.2",
     "toml": "^3.0.0"
   }
 }
